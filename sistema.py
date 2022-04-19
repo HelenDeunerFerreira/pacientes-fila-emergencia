@@ -10,28 +10,46 @@ contador = 999
 
 
 class Paciente:
+    # duvida se faço por parametro ou por input
     def cadastrarPaciente(self, nome_completo, tipo_sanguineo, data_nascimento):
+        print("Escreva os dados a seguir para cadastrar um novo paciente e colocá-lo na fila de espera: ")
+
+        nome = input("Nome: ")
+        tipoSanguineo = input("Tipo sanguíneo: ")
+        data = input("Data de nascimento: ")
+
+        # talvez colocar todos os pacientes em um dicionário com o ome como chave pra acessar eles??
+
         pass
 
-    def inserirNaFila(self, paciente):
-        pass
+    def inserirNaFila(self, prioridade, ordem, paciente):
+        prioridade = int(input("Prioridade de atendimento: "))
+        prioridade = int(input("Ordem de chegada na emergência: "))
+        prioridade = input("Nome do paciente: ")
 
-    def listaChamados():
+        # insere tudo na tupla e a tula é inserida na fila
         pass
 
     def chamarPaciente():
         contador -= 1
+
+        # pega o próximo paciente da fila e joga pra lista dos já chamados
         pass
 
     def listarProximoPaciente():
+
+        # pega opróximo em ordem de prioridade
+        # colocar na chave do dicionário nome ou prioridade (prob prioridade, ai pega o nome pelo index)
         pass
 
     def listarUltimosCinco():
+
+        # n sei ainda
         pass
 
 
 def menu():
-    opcao = int(input("Bem-vindo ao sistema. Digite 1 para cadastrar um paciente, digite 2 para chamar o próximo paciente, digite 3 para apenas listar o próximo paciente e digite 4 para listar os últimos 5 pacientes chamados: "))
+    opcao = int(input("Bem-vindo ao sistema. Digite 1 para cadastrar um paciente, digite 2 para chamar o próximo paciente, digite 3 para apenas mostrar o próximo paciente e digite 4 para listar os últimos 5 pacientes chamados: "))
 
     if opcao == 1:
         Paciente.cadastrarPaciente()
@@ -60,9 +78,3 @@ def menu():
 
 # IMPORTANTE:
 # Manter os pacientes chamados (removidos da fila) em uma lista auxiliar
-
-#    Deve ter interação com o usuário e as opções em um Menu:
-# Adicionar novo paciente
-# Chamar próximo paciente
-# Mostrar próximo paciente (sem chamar)
-# Listar os 5 últimos chamados
