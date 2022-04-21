@@ -27,7 +27,7 @@ class MaxHeap:
 
     def __floatUp(self, index):
         parent = index//2
-        if index <= 1:  # nao faz nada se for raiz
+        if index <= 1:
             return
         elif self.heap[index] > self.heap[parent]:
             self.__swap(index, parent)
@@ -45,14 +45,3 @@ class MaxHeap:
         if maior != index:
             self.__swap(index, maior)
             self.__bubbleDown(maior)
-
-
-## TESTE ##
-h = MaxHeap()
-h.put(45)
-h.put(55)
-h.put(33)
-
-print(h.get())
-print(h.get())
-print(h.get())
